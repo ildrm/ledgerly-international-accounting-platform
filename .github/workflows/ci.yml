@@ -46,13 +46,14 @@ jobs:
       LOG_LEVEL: fatal
       LEDGERLY_SEED_PROFILE: deterministic-development
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - name: Set up pinned pnpm and Node.js
+        uses: pnpm/setup@v2
         with:
-          node-version: 24
-          cache: pnpm
-      - name: Enable pinned package manager
-        run: corepack enable
+          version: 11.15.1
+          runtime: node@24
+          cache: true
+          install: false
       - name: Install dependencies without lock drift
         run: pnpm install --frozen-lockfile
       - name: Bootstrap least-privilege runtime role
