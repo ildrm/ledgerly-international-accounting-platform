@@ -1,0 +1,19 @@
+{
+  "name": "@ledgerly/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test test/migration-contract.test.mjs",
+    "test:integration": "node --test test/financial-invariants.integration.test.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --experimental-strip-types src/migrate.ts",
+    "db:seed": "node --experimental-strip-types src/seed.ts"
+  },
+  "dependencies": { "argon2": "0.45.1", "drizzle-orm": "0.45.2", "pg": "8.23.0" },
+  "devDependencies": { "@types/node": "24.10.13", "@types/pg": "8.20.0", "drizzle-kit": "0.31.10", "typescript": "5.9.3" }
+}

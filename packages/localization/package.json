@@ -1,0 +1,33 @@
+{
+  "name": "@ledgerly/localization",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./catalogs": {
+      "types": "./dist/catalogs/index.d.ts",
+      "import": "./dist/catalogs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "pnpm run build",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

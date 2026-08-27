@@ -1,0 +1,19 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "tasks": {
+    "build": { "dependsOn": ["^build"], "outputs": ["dist/**", ".next/**", "!.next/cache/**"] },
+    "dev": { "cache": false, "persistent": true },
+    "lint": { "dependsOn": ["^lint"] },
+    "typecheck": { "dependsOn": ["^typecheck"] },
+    "test": { "dependsOn": ["^build"] },
+    "test:integration": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "env": ["NODE_ENV", "DATABASE_URL", "MIGRATION_DATABASE_URL", "SESSION_PEPPER", "REDIS_URL", "LOG_LEVEL"]
+    },
+    "db:generate": { "cache": false },
+    "db:migrate": { "cache": false },
+    "db:seed": { "cache": false }
+  }
+}

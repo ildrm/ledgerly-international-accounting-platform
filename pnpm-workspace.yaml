@@ -1,0 +1,23 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  '@scarf/scarf': false
+  argon2: true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+
+minimumReleaseAgeExclude:
+  - '@nestjs/common@11.2.3'
+  - '@nestjs/core@11.2.3'
+  - '@nestjs/platform-fastify@11.2.3'
+  - '@turbo/darwin-64@2.10.12'
+  - '@turbo/darwin-arm64@2.10.12'
+  - '@turbo/linux-64@2.10.12'
+  - '@turbo/linux-arm64@2.10.12'
+  - '@turbo/windows-64@2.10.12'
+  - '@turbo/windows-arm64@2.10.12'
+  - turbo@2.10.12
