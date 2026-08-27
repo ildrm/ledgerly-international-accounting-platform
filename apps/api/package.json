@@ -34,7 +34,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.4",
+    "@eslint/js": "10.0.1",
     "@nestjs/cli": "11.0.14",
     "@types/node": "24.10.13",
     "@types/pg": "8.20.0",
