@@ -48,7 +48,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Set up pinned pnpm and Node.js
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
           version: 11.15.1
           runtime: node@24
